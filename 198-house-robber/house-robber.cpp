@@ -5,21 +5,19 @@ static const auto _ = [](){
     return 0;
 }();
 class Solution {
-public:
-    int fun(int i,int n,vector<int>& nums,vector<int>&dp) {
-        if (i >= n) {
-            return 0;
-        }
-        if(dp[i]!=-1)return dp[i];
-
-        int pick=nums[i]+fun(i+2,n,nums,dp);
-        int nopick=fun(i+1,n,nums,dp);
-        return dp[i]=max(pick,nopick);
-    }
-    
+public:    
     int rob(vector<int>& nums) {
-        int n =nums.size();
-        vector<int>dp(n+1,-1);
-        return fun(0, n, nums,dp);
+        int n = nums.size();
+        int iplus1 = 0;
+        int iplus2 = 0;
+
+            for(int i = n-1; i >= 0; i--)
+            {
+                int curi = nums[i] + iplus2;
+                curi = max(curi, iplus1);
+                iplus2 = iplus1;
+                iplus1 = curi;
+            }
+            return iplus1;
     }
 };
