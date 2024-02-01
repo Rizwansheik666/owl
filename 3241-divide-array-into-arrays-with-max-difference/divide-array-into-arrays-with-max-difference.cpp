@@ -3,7 +3,7 @@ public:
     vector<vector<int>> divideArray(vector<int>& nums, int k) {
         vector<vector<int>>v;
         sort(nums.begin(),nums.end());
-        int n=nums.size(),p=n/3,z=0,x=1;
+        int n=nums.size(),x=1;
         int i=0,j=i+2;
         while(j<n){
             if(nums[j]-nums[i]<=k){
@@ -12,8 +12,9 @@ public:
                 j=i+2;
             }
             else{
-                x=0;
-                break;
+                // x=0;
+                // break;
+                return {};
             }
         }
         // for(int i=0;i<p;i++){
@@ -30,7 +31,8 @@ public:
         //     }
         //     v.push_back(temp);
         // }
-        if(x==1) return v;
-        else return {};
+        // if(x==1)
+        return v;
+        // else return {};
     }
 };
