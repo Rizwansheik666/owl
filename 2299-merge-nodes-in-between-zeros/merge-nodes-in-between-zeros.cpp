@@ -8,8 +8,16 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+ static const auto _ = [](){
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ios_base::sync_with_stdio(false);
+    return 0;
+}();
 class Solution {
 public:
+
+
     ListNode* mergeNodes(ListNode* head) {
         ListNode* curr = head->next;
         ListNode* prev = head; 
