@@ -1,3 +1,10 @@
+static const auto _ = [](){
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ios_base::sync_with_stdio(false);
+    return 0;
+}();
+
 class Solution {
 public:
     int minLength(string s) {
@@ -9,8 +16,7 @@ public:
                 i=0,j=1;
             }
             else{
-                i++;
-                j++;
+                i++,j++;
             }
         }
         return s.size();
