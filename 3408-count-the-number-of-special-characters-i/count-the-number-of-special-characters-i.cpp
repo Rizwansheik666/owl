@@ -4,7 +4,6 @@ public:
         set<char>st;
         for(int i=0;i<word.size();i++){
             st.insert(word[i]);
-
         }
         map<char,int>mp;
         for(auto c:st){
